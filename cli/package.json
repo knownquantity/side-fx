@@ -1,7 +1,7 @@
 {
   "name": "side-effects-mag",
-  "version": "0.1.1",
-  "description": "SFX of an agentic internet",
+  "version": "0.1.2",
+  "description": "The SFX of progress",
   "type": "module",
   "bin": {
     "side-effects-mag": "index.mjs"

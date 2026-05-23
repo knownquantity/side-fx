@@ -1,8 +1,8 @@
-# side-effects
+# side-effects-mag
 
-CLI for the [Side Effects](https://github.com/knownquantity/side-effects-mag) newsletter.
+CLI for [Side Effects Magazine](https://github.com/knownquantity/side-effects-mag).
 
-> SFX of an agentic internet.
+> The SFX of progress.
 
 ## Use
 
