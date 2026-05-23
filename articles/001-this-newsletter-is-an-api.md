@@ -37,9 +37,9 @@ The bet is that machine-readable content becomes table stakes. The websites that
 There is a sub-bet, too: that some readers will prefer to read in the terminal where they already spend the day.
 
 ```
-npx side-effects subscribe
-npx side-effects latest
-npx side-effects read 001
+npx @knownquantity/side-effects subscribe
+npx @knownquantity/side-effects latest
+npx @knownquantity/side-effects read 001
 ```
 
 The CLI is thin — it just talks to the same JSON API anyone else can hit. But it makes the publication feel like a tool, not a destination. You don't go to Side Effects. You call it.

@@ -83,7 +83,7 @@ async function latest() {
     blank()
   }
   divider()
-  out(dim(`read an issue: ${accent('npx side-effects read <id>')}`))
+  out(dim(`read an issue: ${accent('npx @knownquantity/side-effects read <id>')}`))
   blank()
 }
 
@@ -147,7 +147,7 @@ async function read(id) {
   if (!id) {
     blank()
     out(chalk.red('missing article id'))
-    out(dim('usage: npx side-effects read <id>'))
+    out(dim('usage: npx @knownquantity/side-effects read <id>'))
     blank()
     process.exit(1)
   }
@@ -164,7 +164,7 @@ async function read(id) {
   const article = feed.articles.find((a) => a.id === numericId)
   if (!article) {
     out(chalk.red(`article ${numericId} not found.`))
-    out(dim('try: npx side-effects latest'))
+    out(dim('try: npx @knownquantity/side-effects latest'))
     blank()
     process.exit(1)
   }
@@ -288,7 +288,7 @@ switch (cmd) {
   default:
     blank()
     out(chalk.red(`unknown command: ${cmd}`))
-    out(dim('run `npx side-effects help` for available commands'))
+    out(dim('run `npx @knownquantity/side-effects help` for available commands'))
     blank()
     process.exit(1)
 }

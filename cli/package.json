@@ -1,5 +1,5 @@
 {
-  "name": "side-effects",
+  "name": "@knownquantity/side-effects",
   "version": "0.1.0",
   "description": "SFX of an agentic internet",
   "type": "module",

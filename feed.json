@@ -4,7 +4,7 @@
   "author": "Side Effects",
   "canonical_url": "https://raw.githubusercontent.com/knownquantity/side-effects/main/feed.json",
   "subscribe_url": "https://buttondown.email/sideeffects",
-  "cli": "npx side-effects",
+  "cli": "npx @knownquantity/side-effects",
   "updated": "2026-05-23",
   "version": 1,
   "articles": [
