@@ -1,5 +1,5 @@
 **Published:** 2026-05-23
-**Tags:** meta, editorial, infrastructure
+**Tags:** Technology, Culture
 **Read time:** 4 min
 
 ---
@@ -8,7 +8,9 @@
 
 Every new technology generates two conversations. The first is what it can do. The second is what follows. This magazine is for the second one.
 
-The premise is that technological progress generates a layer of consequences that's reliably underreported — not because the consequences are hidden, but because reporting on them requires a posture that's out of fashion. Progress is interesting. It is also, almost always, accompanied by displacement, friction, externalities, dependencies, and long-tail outcomes that fit neither celebration nor alarm. The publications that cover the first conversation well are abundant. The publications that take the second one seriously, on its own terms, without sliding into nostalgia or doomerism, are not.
+The premise is that technological progress generates a layer of consequences that's reliably underreported — not because the consequences are hidden, but because reporting on them requires a posture that's out of fashion. 
+
+Progress is interesting. It is also, almost always, accompanied by displacement, friction, externalities, dependencies, and long-tail outcomes that fit neither celebration nor alarm. The publications that cover the first conversation well are abundant. The publications that take the second one seriously, on its own terms, without sliding into nostalgia or doomerism, are not.
 
 That's the editorial bet. The structural bet is more unusual: this magazine is also a public GitHub repo.
 
