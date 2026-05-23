@@ -1,6 +1,6 @@
 # side-effects-mag
 
-CLI for [Side Effects Magazine](https://github.com/knownquantity/side-effects-mag).
+CLI for [Side Effects Magazine](https://github.com/1999labs/side-effects-mag).
 
 ## Use
 

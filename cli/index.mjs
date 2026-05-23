@@ -4,7 +4,7 @@ import ora from 'ora'
 import inquirer from 'inquirer'
 import fetch from 'node-fetch'
 
-const GITHUB_USERNAME = 'knownquantity'
+const GITHUB_USERNAME = '1999labs'
 const REPO = 'side-effects-mag'
 const BUTTONDOWN_URL = 'https://buttondown.email/sideeffects'
 const SUBSCRIBE_API = 'https://sideeffects-api.vercel.app/api/subscribe'

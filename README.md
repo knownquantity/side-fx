@@ -30,9 +30,9 @@ Or browse [`/articles`](./articles) directly.
 Side Effects is a JSON API. Three endpoints, no auth, no rate limit beyond GitHub's.
 
 ```
-GET  https://raw.githubusercontent.com/knownquantity/side-effects-mag/main/feed.json
-GET  https://raw.githubusercontent.com/knownquantity/side-effects-mag/main/articles/{slug}.md
-GET  https://raw.githubusercontent.com/knownquantity/side-effects-mag/main/tags/{tag}.json
+GET  https://raw.githubusercontent.com/1999labs/side-effects-mag/main/feed.json
+GET  https://raw.githubusercontent.com/1999labs/side-effects-mag/main/articles/{slug}.md
+GET  https://raw.githubusercontent.com/1999labs/side-effects-mag/main/tags/{tag}.json
 ```
 
 Inspect endpoints from the CLI:
@@ -50,7 +50,7 @@ npx side-effects-mag api
   "title": "Side Effects",
   "description": "SFX of an agentic internet",
   "author": "Side Effects",
-  "canonical_url": "https://raw.githubusercontent.com/knownquantity/side-effects-mag/main/feed.json",
+  "canonical_url": "https://raw.githubusercontent.com/1999labs/side-effects-mag/main/feed.json",
   "subscribe_url": "https://buttondown.email/sideeffects",
   "cli": "npx side-effects-mag",
   "updated": "2026-05-23",
@@ -65,7 +65,7 @@ npx side-effects-mag api
       "summary": "Why Side Effects ships as a GitHub repo, a JSON API, and a CLI.",
       "read_time": "3 min",
       "version": 1,
-      "canonical_url": "https://raw.githubusercontent.com/knownquantity/side-effects-mag/main/articles/001-this-newsletter-is-an-api.md"
+      "canonical_url": "https://raw.githubusercontent.com/1999labs/side-effects-mag/main/articles/001-this-newsletter-is-an-api.md"
     }
   ]
 }
