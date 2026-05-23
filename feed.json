@@ -10,14 +10,14 @@
   "articles": [
     {
       "id": 1,
-      "title": "This Newsletter Is an API",
-      "slug": "001-this-newsletter-is-an-api",
+      "title": "An Open-Source Magazine",
+      "slug": "001-an-open-source-magazine",
       "published": "2026-05-23",
-      "tags": ["meta", "agents", "infrastructure"],
-      "summary": "Why Side Effects ships as a GitHub repo, a JSON API, and a CLI — and what that says about publishing for an agentic internet.",
-      "read_time": "3 min",
+      "tags": ["meta", "editorial", "infrastructure"],
+      "summary": "A magazine about the fine print on technological progress, published as a public GitHub repo where the editorial process is part of the publication.",
+      "read_time": "4 min",
       "version": 1,
-      "canonical_url": "https://raw.githubusercontent.com/1999labs/side-effects-mag/main/articles/001-this-newsletter-is-an-api.md"
+      "canonical_url": "https://raw.githubusercontent.com/1999labs/side-effects-mag/main/articles/001-an-open-source-magazine.md"
     }
   ]
 }

@@ -89,7 +89,7 @@ npx side-effects-mag api
 
 | #   | Title                                                                | Date       | Tags                            |
 | --- | -------------------------------------------------------------------- | ---------- | ------------------------------- |
-| 001 | [This Newsletter Is an API](./articles/001-this-newsletter-is-an-api.md) | 2026-05-23 | Technology, Culture    |
+| 001 | [An Open-Source Magazine](./articles/001-an-open-source-magazine.md) | 2026-05-23 | meta, editorial, infrastructure |
 
 ## Contribute 
 
