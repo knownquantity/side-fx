@@ -189,6 +189,17 @@ a { color: inherit; text-decoration: none; }
 .footer__col code { font-family: var(--font-mono); color: inherit; }
 .footer__col a:hover { text-decoration: underline; }
 
+/* click-to-copy CLI commands */
+.footer__col code.cmd { cursor: pointer; }
+.footer__col code.cmd:hover { text-decoration: underline; }
+.footer__col code.cmd:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+.footer__col code.cmd[data-copied]::after {
+  content: attr(data-copied);
+  margin-left: 0.7em;
+  font-size: 0.72em; letter-spacing: 0.12em; text-transform: uppercase;
+  opacity: 0.65;
+}
+
 .footer__wordmark {
   margin: 0 0 clamp(2rem, 6vh, 4rem); font-weight: 700; text-transform: uppercase;
   font-size: clamp(1.31rem, 4.5vw, 3rem); line-height: 0.95; letter-spacing: -0.02em;

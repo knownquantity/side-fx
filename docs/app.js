@@ -55,7 +55,57 @@ async function init() {
 
   render(issues);
   window.addEventListener("hashchange", route);
+  document.addEventListener("click", onCmdActivate);
+  document.addEventListener("keydown", onCmdKey);
   route();
+}
+
+// ── Click-to-copy CLI commands ────────────────────────────────────────────
+
+function onCmdActivate(e) {
+  const el = e.target.closest && e.target.closest(".cmd");
+  if (el) copyText(el.textContent.trim(), el);
+}
+
+function onCmdKey(e) {
+  if (e.key !== "Enter" && e.key !== " ") return;
+  const el = e.target.closest && e.target.closest(".cmd");
+  if (!el) return;
+  e.preventDefault();
+  copyText(el.textContent.trim(), el);
+}
+
+async function copyText(text, el) {
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      await navigator.clipboard.writeText(text);
+    } else {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      ta.remove();
+    }
+    flashCopied(el, "copied");
+  } catch (_) {
+    flashCopied(el, "copy failed");
+  }
+}
+
+function flashCopied(el, label) {
+  el.setAttribute("data-copied", label);
+  clearTimeout(el._copyTimer);
+  el._copyTimer = setTimeout(() => el.removeAttribute("data-copied"), 1200);
+}
+
+// Markup for a copyable CLI command.
+function cmdHtml(text) {
+  return `<code class="cmd" tabindex="0" role="button" title="Click to copy">${escapeHtml(
+    text
+  )}</code>`;
 }
 
 // ── Render the stack ──────────────────────────────────────────────────────
@@ -138,12 +188,14 @@ function footer(color) {
         <div class="footer__col">
           <h2>Subscribe</h2>
           <ul>
-            <li><code>${escapeHtml(cli)} subscribe</code></li>
+            <li>${cmdHtml(`${cli} subscribe`)}</li>
           </ul>
           <h2>Read</h2>
           <ul>
-            <li><code>${escapeHtml(cli)} latest</code></li>
-            <li><code>${escapeHtml(cli)} read 001</code></li>
+            <li>${cmdHtml(`${cli} latest`)}</li>
+            <li>${cmdHtml(`${cli} read 001`)}</li>
+            <li>${cmdHtml(`${cli} read 002`)}</li>
+            <li>${cmdHtml(`${cli} read 003`)}</li>
           </ul>
         </div>
         <div class="footer__col">
