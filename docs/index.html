@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Side Effects Magazine</title>
+  <meta name="description" content="An open-source publication exploring frontier technologies and their cultural n^th-order side effects." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Side Effects Magazine" />
+  <meta property="og:description" content="An open-source publication exploring frontier technologies and their cultural n^th-order side effects." />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Sticky stack: masthead -> issue panels -> footer. Injected by app.js. -->
+  <main id="stack" class="stack" aria-busy="true">
+    <noscript>
+      <div class="panel panel--masthead">
+        <div class="panel__inner">
+          <h1 class="masthead__title">Side&nbsp;Effects</h1>
+          <p class="masthead__tagline">An open-source publication exploring frontier technologies and their cultural n<sup>th</sup>-order side effects.</p>
+          <p>This site renders its issues from <a href="https://raw.githubusercontent.com/1999labs/side-effects-mag/main/feed.json">feed.json</a>. Enable JavaScript, or read the archive directly at <a href="https://github.com/1999labs/side-effects-mag/tree/main/articles">/articles</a>.</p>
+        </div>
+      </div>
+    </noscript>
+  </main>
+
+  <!-- In-browser reader overlay. Toggled via #read/<slug> hash routing. -->
+  <article id="reader" class="reader" hidden aria-hidden="true">
+    <div class="reader__bar">
+      <a class="reader__back" href="#">&larr;&nbsp;<span>All issues</span></a>
+      <span class="reader__brand">Side Effects</span>
+    </div>
+    <div id="reader-body" class="reader__body"></div>
+  </article>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
