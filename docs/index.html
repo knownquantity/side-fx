@@ -12,11 +12,19 @@
   <meta property="og:type" content="website" />
 
   <style>
+    @font-face {
+      font-family: "Baloo 2"; /* SIL OFL — see assets/fonts/baloo2-OFL.txt */
+      font-style: normal;
+      font-weight: 400 800;
+      font-display: swap;
+      src: url("assets/fonts/baloo2-latin.woff2") format("woff2");
+    }
     :root {
-      --bg: #adf7f7;
+      --bg: #ffffff;
       --fg: #0b3a3a;
       --accent: #075e5e;
-      --spine: clamp(2.2rem, 5vw, 3.5rem);
+      --spine: clamp(2.6rem, 6vw, 4rem);
+      --bubble: "Baloo 2", system-ui, sans-serif;
       --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, "Cascadia Mono", Consolas, "Liberation Mono", monospace;
     }
     * { box-sizing: border-box; }
@@ -32,28 +40,31 @@
     }
     #screen { max-width: 880px; margin: 0 auto; }
 
-    /* vertical wordmark running up the left edge */
+    /* vertical wordmark — upright bubble letters, one pop colour each */
     .spine {
       position: fixed;
       top: 0; left: 0; bottom: 0;
       width: var(--spine);
-      border-right: 1px solid color-mix(in srgb, var(--fg) 28%, transparent);
+      border-right: 1px solid color-mix(in srgb, var(--fg) 14%, transparent);
       background: var(--bg);
       z-index: 5;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
       pointer-events: none; /* clicks fall through to focus the prompt */
     }
-    .spine span {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%) rotate(-90deg);
+    #spine {
+      writing-mode: vertical-rl;
+      text-orientation: upright;
       white-space: nowrap;
       text-transform: uppercase;
-      font-weight: 700;
-      letter-spacing: 0.42em;
-      font-size: clamp(0.72rem, 0.55rem + 0.5vw, 1rem);
-      color: var(--fg);
+      font-family: var(--bubble);
+      font-weight: 800;
+      font-size: clamp(0.8rem, 3.2vh, 1.6rem);
+      line-height: 1.04;
+      letter-spacing: 0.01em;
+      -webkit-text-stroke: 1.1px #15130f; /* dark outline = bubble-letter definition */
+      paint-order: stroke fill;
     }
-    @media (max-height: 26rem) { .spine span { letter-spacing: 0.2em; font-size: 0.7rem; } }
 
     #out, .line { white-space: pre-wrap; overflow-wrap: anywhere; }
     .blk { margin: 0; }
@@ -94,7 +105,7 @@
   </style>
 </head>
 <body>
-  <div class="spine" aria-hidden="true"><span>Side Effects Magazine</span></div>
+  <div class="spine" role="img" aria-label="Side Effects Magazine"><span id="spine"></span></div>
   <main id="screen">
     <div id="out"></div>
     <form id="form" class="line" autocomplete="off">
@@ -118,6 +129,23 @@
   let histPos = 0;
   let lastEcho = null;
 
+  // one pop-art colour per letter of the vertical wordmark
+  const POP = ["#ff2b2b", "#ff7a00", "#ffd400", "#28c24b", "#00b3e6", "#1657d0", "#ff2d8f", "#8e2de2"];
+  function buildSpine() {
+    const host = document.getElementById("spine");
+    if (!host) return;
+    let ci = 0;
+    for (const ch of "Side Effects Magazine") {
+      if (ch === " ") { host.appendChild(document.createTextNode(" ")); continue; }
+      const s = document.createElement("span");
+      s.textContent = ch;
+      s.style.color = POP[ci % POP.length];
+      ci++;
+      host.appendChild(s);
+    }
+  }
+
+  buildSpine();
   boot();
 
   async function boot() {
