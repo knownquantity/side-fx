@@ -34,7 +34,7 @@ html { -webkit-text-size-adjust: 100%; }
 
 body {
   margin: 0;
-  background: #00b2e2; /* shows beneath the last sticky panel */
+  background: #94f4f4; /* shows beneath the last sticky panel */
   color: var(--ink);
   font-family: var(--font-display);
   font-size: clamp(0.79rem, 0.68rem + 0.38vw, 1.09rem);

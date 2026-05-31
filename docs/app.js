@@ -9,13 +9,12 @@
 const FEED_URL = "https://raw.githubusercontent.com/1999labs/side-effects-mag/main/feed.json";
 const REPO_URL = "https://github.com/1999labs/side-effects-mag";
 
-// Two-color scheme. Every panel down the stack swaps which is background and
-// which is text, so the colors alternate back and forth.
-const CYAN = "#00b2e2";
-const YELLOW = "#f7ea00";
+// Two-tint scheme. Panels alternate between two close light-cyan backgrounds;
+// text is a near-black that carries the same cyan hue (tone-on-tone), like the
+// darker-tint-of-itself text on the reference site.
 const TWO = [
-  { bg: YELLOW, fg: CYAN },
-  { bg: CYAN, fg: YELLOW },
+  { bg: "#adf7f7", fg: "#0b3a3a" },
+  { bg: "#94f4f4", fg: "#093838" },
 ];
 const colorAt = (i) => TWO[i % 2];
 
