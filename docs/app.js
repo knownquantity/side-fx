@@ -23,9 +23,6 @@ const ACCENTS = [
   { bg: "#8e2de2", fg: "#fbf3e2" }, // purple
 ];
 
-const TAGLINE =
-  "An open-source publication exploring frontier technologies and their cultural nᵗʰ-order side effects.";
-
 const stack = document.getElementById("stack");
 const reader = document.getElementById("reader");
 const readerBody = document.getElementById("reader-body");
@@ -72,7 +69,7 @@ function render(issues) {
   stack.removeAttribute("aria-busy");
   stack.innerHTML = "";
 
-  stack.appendChild(masthead(issues.length));
+  stack.appendChild(masthead());
 
   issues.forEach((a, i) => {
     const accent = ACCENTS[i % ACCENTS.length];
@@ -82,28 +79,11 @@ function render(issues) {
   stack.appendChild(footer());
 }
 
-function masthead(count) {
-  const subscribe = (FEED && FEED.subscribe_url) || "#";
+function masthead() {
+  // First slide: just the wordmark (top-left) and the scroll-cue arrow.
   const inner = `
     <div class="panel__inner">
-      <div class="masthead__top">
-        <span class="label">Side Effects&nbsp;&middot;&nbsp;${count} ${
-    count === 1 ? "issue" : "issues"
-  }</span>
-        <nav class="masthead__nav">
-          <a href="#issues">Read</a>
-          <a href="${escapeAttr(subscribe)}">Subscribe</a>
-          <a href="${escapeAttr(FEED_URL)}">API</a>
-          <a href="${escapeAttr(REPO_URL)}">GitHub</a>
-        </nav>
-      </div>
-      <div class="masthead__center">
-        <h1 class="masthead__title">Side<br>Effects</h1>
-        <p class="masthead__tagline">${TAGLINE.replace(
-          "nᵗʰ",
-          'n<sup>th</sup>'
-        )}</p>
-      </div>
+      <h1 class="masthead__title">Side Effects Magazine</h1>
       <span class="panel__arrow" aria-hidden="true">&darr;</span>
     </div>`;
   const el = panelEl("panel panel--masthead", inner);
