@@ -14,7 +14,7 @@ const REPO_URL = "https://github.com/1999labs/side-effects-mag";
 // darker-tint-of-itself text on the reference site.
 const TWO = [
   { bg: "#adf7f7", fg: "#0b3a3a" },
-  { bg: "#94f4f4", fg: "#093838" },
+  { bg: "#6af0f0", fg: "#093838" },
 ];
 const colorAt = (i) => TWO[i % 2];
 
@@ -129,6 +129,7 @@ function footer(color) {
   const cli = (FEED && FEED.cli) || "npx side-effects-mag";
   const inner = `
     <div class="footer__inner">
+      <p class="footer__wordmark">Side Effects Magazine</p>
       <div class="footer__grid">
         <div class="footer__col">
           <h2>About</h2>
@@ -151,10 +152,6 @@ function footer(color) {
             <li><a href="mailto:noah@1999.wtf">noah@1999.wtf</a></li>
           </ul>
         </div>
-      </div>
-      <div class="footer__foot">
-        <p class="footer__wordmark">Side Effects Magazine</p>
-        <span class="footer__updated">${escapeHtml((FEED && FEED.updated) || "")}</span>
       </div>
     </div>`;
   return paint(panelEl("panel panel--footer", inner), color);
